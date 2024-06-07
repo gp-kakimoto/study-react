@@ -1,7 +1,8 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import {Footer} from '../components/Footer'
-import { Links } from './links'
+import { Links } from '../components/links'
+import Headline from '../components/Headline'
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -9,16 +10,8 @@ export default function Home() {
         <title>Index Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Index Page
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+         <Headline page="index"/>
         <Links />
       </main>
       <Footer />
