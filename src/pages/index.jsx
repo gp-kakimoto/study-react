@@ -5,20 +5,18 @@ import {Main} from 'src/components/Main'
 import { Header } from 'src/components/Header'
 import { useCallback,useEffect, useState } from 'react'
 
-//const handleClick = (e, foo) => {
-//  console,log(e.target.href);
-//  e.preventDefault();
-//  alert(foo);
-// };
-
 export default function Home() {
 
   const [count,setCount] = useState(1);
 
-  const handleClick = (e) => {
-    setCount((count) => count+1 );
-    setCount((count) => count+1 );
-  }
+  const handleClick = useCallback (
+    () => {
+      if (count < 10) {
+        setCount((count) => count+1 );
+      }
+    },
+    [count]
+  ); // countが変化するたびにメソッドが再生成される
 
   useEffect(() => {
     document.body.style.backgroundColor = "lightblue";
@@ -34,8 +32,7 @@ export default function Home() {
       </Head>
       <Header />
       <h1>{count}</h1>
-      <button onClick={handleClick}>ボタン</button>
-    
+      <button onClick={handleClick}>ボタン</button>    
       <Main page="index" />
       <Footer />
     </div>
