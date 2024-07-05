@@ -1,7 +1,7 @@
 import classes from "src/components/Main/Main.module.css";
 import { Links } from "src/components/links";
 import { Headline } from "src/components/Headline";
-import { useCallback, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 
 const ITEMS = [
   {
