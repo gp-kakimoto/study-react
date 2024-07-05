@@ -14,7 +14,10 @@ export const useInputArray = () => {
 
   const handleAdd = useCallback(() => {
     setArray((prevArray) => {
-      if (prevArray.some((item) => item === text)) {
+      if (
+        /*prevArray.some((item) => item === text)*/
+        prevArray.includes(text)
+      ) {
         alert("同じ要素がすでに存在しています");
         return prevArray;
       }

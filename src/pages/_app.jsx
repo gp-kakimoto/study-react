@@ -4,10 +4,8 @@ import { useCounter } from "src/hooks/useCounter";
 import { useInputArray } from "src/hooks/useInputArray";
 import { useBgColor } from "src/hooks/useBgColor";
 
-function MyApp({ Component, pageProps }) {
-  //const { count, isShow, handleClick, handleDisplay } = useCounter();
+const MyApp = ({ Component, pageProps }) => {
   const counter = useCounter();
-  //const { text, array, handleChange, handleAdd } = useInputArray();
   const inputArray = useInputArray();
   useBgColor();
 
@@ -15,6 +13,6 @@ function MyApp({ Component, pageProps }) {
     <link rel="icon" href="/favicon.ico" />
   </Head>;
   return <Component {...pageProps} {...counter} {...inputArray} />;
-}
+};
 
 export default MyApp;

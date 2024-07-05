@@ -1,10 +1,9 @@
-//import { useCallback, useState } from "react";
 import classes from "src/components/links/links.module.css";
 
-export function Links({ items }) {
+export const Links = (props) => {
   return (
     <div className={classes.grid}>
-      {items.map((item) => {
+      {props.items.map((item) => {
         return (
           <a key={item.href} href={item.href} className={classes.card}>
             <h3 className={classes.title}>{item.title}</h3>
@@ -14,4 +13,4 @@ export function Links({ items }) {
       })}
     </div>
   );
-}
+};
